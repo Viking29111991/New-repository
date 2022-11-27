@@ -1,10 +1,28 @@
-# Напишите программу, которая по заданному номеру четверти, 
-# показывает диапазон возможных координат точек в этой четверти (x и y).
+#Задайте список из N элементов, заполненных числами из промежутка [-N, N].
+#Найдите произведение элементов на указанных индексах. Индексы вводятся одной строкой, через пробел.
 
-n = int(input('Введите номер четверти: '))
-if n < 1 or n > 4:
-     print('Ошибка! Пожалуйста, измените ввод номера четверти!')
-elif n == 1: print('x > 0 and y > 0')
-elif n == 2: print('x < 0 and y > 0')
-elif n == 3: print('x < 0 and y < 0')
-elif n == 4: print('x > 0 and y < 0')
+#n = 3
+#[-3, -2, -1, 0, 1, 2, 3]
+#--> 0 2 3
+#-3 * -1 * 0 = 0
+#Вывод: 0
+
+from random import randint
+numbers = []
+for i in range(3):
+    numbers.append(randint (-3,3))
+print(numbers)
+
+def get_numbers(numbers):
+    count =0 
+    for element in numbers:
+        count +=1
+    return count
+print('Number of elements: ', get_numbers(numbers))
+
+x = int(input('Enter  position of first element: '))
+y = int(input('Enter position of second element: '))
+
+for i in range(len(numbers)):
+    mult = numbers[x -1]*numbers[y - 1]
+print(f'Mult of elements: {numbers[x -1]} * {numbers[y -1]} =', mult)
